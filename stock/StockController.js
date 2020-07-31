@@ -7,10 +7,12 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 const { route } = require('../app');
 const finKey = process.env.FIN_KEY;
+const cors = require('cors');
 
+express.use(cors());
 
 router.get('/:stock', function (req, res) {
-    
+
     const stock = req.params.stock;
     const stocks = getStocks(stock);
     stocks.then(response => res.status(200).send(response.data))
