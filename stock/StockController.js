@@ -9,8 +9,6 @@ const { route } = require('../app');
 const finKey = process.env.FIN_KEY;
 const cors = require('cors');
 
-express.use(cors());
-
 router.get('/:stock', cors(), function (req, res) {
 
     const stock = req.params.stock;
