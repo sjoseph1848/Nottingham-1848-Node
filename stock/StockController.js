@@ -11,7 +11,7 @@ const cors = require('cors');
 
 express.use(cors());
 
-router.get('/:stock', function (req, res) {
+router.get('/:stock', cors(), function (req, res) {
 
     const stock = req.params.stock;
     const stocks = getStocks(stock);
